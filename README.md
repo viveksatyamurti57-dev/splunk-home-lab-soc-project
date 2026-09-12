@@ -33,7 +33,7 @@ index=* EventCode=4625
 Detects failed login attempts — the earliest indicator of a brute-force or
 credential-guessing attack. ✅ Results found.
 
-![Failed Logons](screenshots/failed-logons.png)
+![Failed Logons](Failed_logons.png)
 
 ### 2. New Process Creation
 ```spl
@@ -42,7 +42,7 @@ index=* EventCode=4688
 Flags every new process launched on the system — useful for spotting
 unexpected or malicious executables. ✅ Results found.
 
-![Process Creation](screenshots/process-creation.png)
+![Process Creation](New_process_creation.png)
 
 ### 3. Successful Logons
 ```spl
@@ -51,7 +51,7 @@ index=* EventCode=4624
 Provides a baseline of normal login activity to compare against failed or
 unusual logons. ✅ Results found.
 
-![Successful Logons](screenshots/successful-logons.png)
+![Successful Logons](Successful_logons.png)
 
 ### 4. Failed Logons by Source IP
 ```spl
@@ -61,7 +61,7 @@ Aggregates failed logon attempts by source IP — in a real environment, this
 would immediately surface which host(s) are being targeted by a
 brute-force attempt. ✅ Results found.
 
-![Failed Logons by IP](screenshots/failed-logons-by-ip.png)
+![Failed Logons by IP](Failed-logons-by-ip.png)
 
 ### 5. RDP Logons (Logon Type 10)
 ```spl
