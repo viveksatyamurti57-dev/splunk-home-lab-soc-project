@@ -51,7 +51,7 @@ index=* EventCode=4624
 Provides a baseline of normal login activity to compare against failed or
 unusual logons. ✅ Results found.
 
-![Successful Logons](Successful_logon.png)
+![Successful Logons](Successfull_logon.png)
 
 ### 4. Failed Logons by Source IP
 ```spl
