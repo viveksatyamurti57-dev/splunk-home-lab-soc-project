@@ -33,7 +33,7 @@ index=* EventCode=4625
 Detects failed login attempts — the earliest indicator of a brute-force or
 credential-guessing attack. ✅ Results found.
 
-![Failed Logons](Failed_logons.png)
+![Failed Logons](Failed_logon.png)
 
 ### 2. New Process Creation
 ```spl
@@ -51,7 +51,7 @@ index=* EventCode=4624
 Provides a baseline of normal login activity to compare against failed or
 unusual logons. ✅ Results found.
 
-![Successful Logons](Successful_logons.png)
+![Successful Logons](Successful_logon.png)
 
 ### 4. Failed Logons by Source IP
 ```spl
