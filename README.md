@@ -31,7 +31,7 @@ end: log ingestion → query design → analysis.
 index=* EventCode=4625
 ```
 Detects failed login attempts — the earliest indicator of a brute-force or
-credential-guessing attack. ✅ Results found.
+credential-guessing attack. Results found.
 
 ![Failed Logons](Failed_logon.png)
 
@@ -40,7 +40,7 @@ credential-guessing attack. ✅ Results found.
 index=* EventCode=4688
 ```
 Flags every new process launched on the system — useful for spotting
-unexpected or malicious executables. ✅ Results found.
+unexpected or malicious executables. Results found.
 
 ![Process Creation](New_process_creation.png)
 
@@ -49,7 +49,7 @@ unexpected or malicious executables. ✅ Results found.
 index=* EventCode=4624
 ```
 Provides a baseline of normal login activity to compare against failed or
-unusual logons. ✅ Results found.
+unusual logons. Results found.
 
 ![Successful Logons](Successfull_logon.png)
 
@@ -57,18 +57,14 @@ unusual logons. ✅ Results found.
 ```spl
 index=* EventCode=4625 | stats count by src_ip
 ```
-Aggregates failed logon attempts by source IP — in a real environment, this
-would immediately surface which host(s) are being targeted by a
-brute-force attempt. ✅ Results found.
-
-![Failed Logons by IP](Failed-logons-by-ip.png)
+"Designed to identify which source IPs are generating the most failed logon attempts — a key step in spotting brute-force attacks. No results in this lab session, likely because the src_ip field wasn't populated for local Windows Security events (this field is typically more relevant when logs come from network-facing systems or remote logon attempts)."
 
 ### 5. RDP Logons (Logon Type 10)
 ```spl
 index=* EventCode=4624 Logon_Type=10
 ```
 Flags remote desktop logons, which are a common lateral movement technique.
-⚠️ No results in this lab session, since no RDP sessions occurred — but this
+No results in this lab session, since no RDP sessions occurred — but this
 query would be essential in an environment with remote access enabled.
 
 ### 6. Account Lockouts
@@ -76,7 +72,7 @@ query would be essential in an environment with remote access enabled.
 index=* EventCode=4740
 ```
 Detects when an account is locked out after repeated failed attempts —
-a strong brute-force indicator. ⚠️ No results, as no lockout occurred in
+a strong brute-force indicator. No results, as no lockout occurred in
 this lab session.
 
 ### 7. New User Account Created
@@ -84,7 +80,7 @@ this lab session.
 index=* EventCode=4720
 ```
 Flags new account creation, which can indicate privilege escalation or
-persistence by an attacker. ⚠️ No results, as no new account was created
+persistence by an attacker. No results, as no new account was created
 during this lab session.
 
 ## What I'd Add in a Production Environment
